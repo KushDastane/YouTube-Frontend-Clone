@@ -43,7 +43,6 @@
  .iconsbg:hover{
      background-color: #dddddd;
 }
-/* icons bg change over */
  .header img{
      margin-left:15px ;
 }
@@ -140,6 +139,7 @@
  .create_btn:hover{
      background-color: #ddd;
 }
+
 /* Main Body */
  .mainBody{
      height: calc(100vh - 3.7rem);
@@ -157,6 +157,8 @@
      font-size: 14px;
      z-index: 100;
      overflow-y: auto;
+     transition: transform 0.3s ease-in-out;
+     transform: translateX(0);
 }
 /* Scroll editing */
  .sidebar::-webkit-scrollbar{
@@ -323,7 +325,7 @@
      display: flex;
      align-items: center;
 }
-/* Videos section */
+ /* Videos section */
  .videos_container{
      display: flex;
      flex-direction: column;
@@ -336,7 +338,7 @@
 }
  .ad_info{
      display: flex;
-     max-width: 25rem;
+     max-width: 100%;
      justify-content: space-between;
 }
  .unicode{
@@ -503,7 +505,13 @@
     }
      .sidebar{
          display: none;
+         transform: translateX(-100%);
     }
+     .sidebar.sidebar-active{
+         display: block;
+         transform: translateX(0);
+         box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+     }
      .main{
          width: 100%;
          margin: 0;
@@ -534,5 +542,3 @@
          justify-content: center;
     }
 }
-
- 
